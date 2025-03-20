@@ -64,6 +64,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
       return res.status(500).json({ message: "Server error processing contact form" });
     }
   });
+  
+  // API route for getting all contact messages (for admin dashboard)
+  app.get('/api/admin/messages', async (_req: Request, res: Response) => {
+    try {
+      const messages = await storage.getContactMessages();
+      return res.status(200).json(messages);
+    } catch (err) {
+      console.error("Error retrieving contact messages:", err);
+      return res.status(500).json({ message: "Server error retrieving contact messages" });
+    }
+  });
 
   const httpServer = createServer(app);
 
