@@ -1,4 +1,5 @@
 import { Twitter, Linkedin, Facebook, Instagram } from "lucide-react";
+import { Link } from "wouter";
 
 const Footer = () => {
   const handleLinkClick = (sectionId: string) => {
@@ -92,8 +93,13 @@ const Footer = () => {
           </div>
         </div>
         
-        <div className="border-t border-gray-800 pt-8">
-          <p className="text-gray-500 text-center">© {new Date().getFullYear()} LaunchPad. All rights reserved.</p>
+        <div className="border-t border-gray-800 pt-8 flex flex-col items-center">
+          <p className="text-gray-500 text-center mb-2">© {new Date().getFullYear()} LaunchPad. All rights reserved.</p>
+          <div className="text-center">
+            <Link href="/admin/messages">
+              <a className="text-xs text-gray-600 hover:text-gray-400 transition-colors">Admin Messages</a>
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
