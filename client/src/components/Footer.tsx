@@ -96,8 +96,8 @@ const Footer = () => {
         <div className="border-t border-gray-800 pt-8 flex flex-col items-center">
           <p className="text-gray-500 text-center mb-2">© {new Date().getFullYear()} LaunchPad. All rights reserved.</p>
           <div className="text-center">
-            <Link href="/admin/messages">
-              <a className="text-xs text-gray-600 hover:text-gray-400 transition-colors">Admin Messages</a>
+            <Link href="/admin/messages" className="text-xs text-gray-600 hover:text-gray-400 transition-colors">
+              Admin Messages
             </Link>
           </div>
         </div>
